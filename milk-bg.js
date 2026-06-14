@@ -6,7 +6,7 @@ console.log("[DEBUG] milk-bg.js loaded");
     }
     console.log("[DEBUG] Player detected");
 
-    const DEFAULT_BG = "https://raw.githubusercontent.com/Lucbro99/Spicetify-milk-background/main/Milk.gif";
+    const DEFAULT_BG = "https://raw.githubusercontent.com/Lucbro99/Spicetify-milk-background/main/assets/Milk.gif";
 
     const CONTAINER = () => document.querySelector(".Root__top-container");
     let layerA, layerB;
