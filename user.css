@@ -138,3 +138,10 @@ button[aria-pressed="true"] svg {
     width: 50px !important;
     height: 50px !important;
 }
+
+/* Remove default white background from play/pause button */
+[data-testid="control-button-playpause"] {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
