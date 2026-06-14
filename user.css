@@ -1,26 +1,112 @@
+:root {
+    /* Main background color with low opacity for glass effect */
+    --glass-bg: rgba(13, 11, 11, 0.20);
+    /* Stronger version for elements that need more contrast */
+    --glass-strong: rgba(13, 11, 11, 0.28);
+    /* Accent colors */
+    --red: #C1121F;
+    --cyan: #4ECDC4;
+    /* Text colors */
+    --text-main: #E8E0D5;
+    --text-soft: #8A8075;
+}
+
+/* Make the main container transparent so the background image shows through */
+.Root__top-container {
+    position: relative;
+    background-color: transparent !important;
+    overflow: hidden;
+}
+
+/* Default background image — always visible unless a dynamic layer overrides it */
 .Root__top-container::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("file:///home/lucbro/.spicetify/Themes/milk/Milk.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://raw.githubusercontent.com/Lucbro99/Spicetify-milk-background/main/Milk.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -3;
+    /* Adjust this value to control background visibility (0 = invisible, 1 = full) */
+    opacity: 0.35;
+    transition: opacity 1.8s ease-in-out;
 }
 
+/* Dynamic background layers injected by dynamic-bg.js
+   These sit above the default background and crossfade between images */
+.dynamic-bg-layer {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+    /* Hidden by default, shown by JS when a matching track plays */
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+    will-change: opacity;
+}
+
+/* Remove all default Spotify backgrounds so our custom image shows through */
+.Root__globalNav,
 .Root__nav-bar,
-.main-navBar-navBar {
-  background: rgba(8, 6, 6, 0.80) !important;
+.main-entityHeader-container>*,
+.playlist-playlist-playlistContent,
+.main-entityHeader-backgroundColor,
+.playlist-playlist-actionBarBackground-background,
+.main-actionBarBackground-background,
+.Root__now-playing-bar>button,
+.lyrics-lyrics-background,
+.Bdcf5g__Rug3TGqSdbiy,
+.Root__now-playing-bar,
+#Desktop_LeftSidebar_Id,
+.YourLibraryX,
+#Desktop_PanelContainer_Id::before,
+.main-home-homeHeader,
+.main-view-container__scroll-node-child>*>*,
+.Root__right-sidebar>*,
+.lyrics-lyrics-container:first-child,
+:has(+.lyrics-lyrics-container),
+.marketplace-header {
+    background-color: transparent !important;
+    background-image: none !important;
 }
 
-.Root__main-view {
-  background: rgba(13, 11, 11, 0.70) !important;
+/* Apply a subtle dark glass effect to key UI panels */
+.view-homeShortcutsGrid-shortcut,
+#Desktop_PanelContainer_Id,
+.Root__main-view,
+.main-yourLibraryX-library,
+.ChipInnerComponent-sm {
+    background-color: var(--glass-bg) !important;
 }
 
-.Root__now-playing-bar {
-  background: rgba(10, 8, 8, 0.85) !important;
+/* Top navigation bar with dark glass and a red accent border */
+.main-topBar-background {
+    background: linear-gradient(90deg,
+            rgba(13, 11, 11, 0.85),
+            rgba(30, 15, 15, 0.85)) !important;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(193, 18, 31, 0.25);
+}
+
+/* Active buttons (shuffle, repeat) glow in cyan */
+button[aria-checked="true"] svg,
+button[aria-checked="mixed"] svg,
+button[aria-pressed="true"] svg {
+    fill: var(--cyan) !important;
+    filter: drop-shadow(0 0 6px #4ECDC4);
+}
+
+/* Spotify accent color overridden with our red */
+.encore-internal-color-text-bright-accent {
+    color: var(--red) !important;
+}
+
+/* Slightly elevated surfaces use a dark transparent background */
+* {
+    --spice-main-elevated: rgba(0, 0, 0, 0.4)
 }
