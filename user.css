@@ -123,3 +123,18 @@ button[aria-pressed="true"] svg {
     width: 50px !important;
     height: 50px !important;
 }
+
+/* Hide default play/pause SVG icons */
+[data-testid="control-button-playpause"] svg {
+    display: none !important;
+}
+
+/* Replace with custom image */
+[data-testid="control-button-playpause"] {
+    background-image: url("https://raw.githubusercontent.com/Lucbro99/Spicetify-milk-background/main/assets/play.jpg") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 50px !important;
+    height: 50px !important;
+}
