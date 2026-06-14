@@ -116,3 +116,10 @@ button[aria-pressed="true"] svg {
 [data-testid="control-button-skip-forward"] svg {
     display: none !important;
 }
+
+/* Make skip buttons larger */
+[data-testid="control-button-skip-back"],
+[data-testid="control-button-skip-forward"] {
+    width: 50px !important;
+    height: 50px !important;
+}

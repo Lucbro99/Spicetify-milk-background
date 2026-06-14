@@ -13,7 +13,7 @@ const ASSETS = "https://raw.githubusercontent.com/Lucbro99/Spicetify-milk-backgr
 // Replace liked songs and episodes covers
 for (const img of document.querySelectorAll('img[src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"]')) {
     img.removeAttribute("srcset");
-    img.setAttribute("src", `${ASSETS}/play.jpeg`);
+    img.setAttribute("src", `${ASSETS}/play.jpg`);
 }
 
 // Replace progress bar handle with custom image
