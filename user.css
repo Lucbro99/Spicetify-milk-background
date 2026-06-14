@@ -110,3 +110,9 @@ button[aria-pressed="true"] svg {
 * {
     --spice-main-elevated: rgba(0, 0, 0, 0.4)
 }
+
+/* Hide default SVG icons on skip buttons so custom images show through */
+[data-testid="control-button-skip-back"] svg,
+[data-testid="control-button-skip-forward"] svg {
+    display: none !important;
+}
