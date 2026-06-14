@@ -1,0 +1,26 @@
+.Root__top-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("file:///home/lucbro/.spicetify/Themes/milk/Milk.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.Root__nav-bar,
+.main-navBar-navBar {
+  background: rgba(8, 6, 6, 0.80) !important;
+}
+
+.Root__main-view {
+  background: rgba(13, 11, 11, 0.70) !important;
+}
+
+.Root__now-playing-bar {
+  background: rgba(10, 8, 8, 0.85) !important;
+}
