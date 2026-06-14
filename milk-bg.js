@@ -4,14 +4,15 @@ console.log("[DEBUG] milk-bg.js loaded");
         setTimeout(arguments.callee, 500);
         return;
     }
-    console.log("[DEBUG] Player detected");
 
+    // URL of the background GIF hosted on GitHub
     const DEFAULT_BG = "https://raw.githubusercontent.com/Lucbro99/Spicetify-milk-background/main/assets/Milk.gif";
 
     const CONTAINER = () => document.querySelector(".Root__top-container");
     let layerA, layerB;
     let activeLayer = "a";
 
+    // Create two layers for crossfade effect
     function createLayers(container) {
         layerA = document.createElement("div");
         layerB = document.createElement("div");
@@ -21,6 +22,7 @@ console.log("[DEBUG] milk-bg.js loaded");
         container.appendChild(layerB);
     }
 
+    // Crossfade between layerA and layerB
     function crossfadeTo(imageUrl) {
         const nextLayer = activeLayer === "a" ? layerB : layerA;
         const currentLayer = activeLayer === "a" ? layerA : layerB;
@@ -31,17 +33,17 @@ console.log("[DEBUG] milk-bg.js loaded");
         activeLayer = activeLayer === "a" ? "b" : "a";
     }
 
+    // Set the background — always uses DEFAULT_BG
     function updateBackground() {
         const container = CONTAINER();
         if (!container) return;
-        if (!layerA || !layerB) {
-            createLayers(container);
-        }
+        if (!layerA || !layerB) createLayers(container);
         container.classList.add("has-custom-bg");
         crossfadeTo(DEFAULT_BG);
     }
 
     Spicetify.Player.addEventListener("songchange", updateBackground);
+    // Safety polling in case songchange doesn't fire
     const safetyInterval = setInterval(updateBackground, 1400);
     setTimeout(updateBackground, 800);
     window.addEventListener("beforeunload", () => clearInterval(safetyInterval));
