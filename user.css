@@ -139,9 +139,10 @@ button[aria-pressed="true"] svg {
     height: 50px !important;
 }
 
-/* Remove default white background from play/pause button */
-[data-testid="control-button-playpause"] {
+/* Remove white background from inner play button elements */
+[data-testid="control-button-playpause"] > *,
+[data-testid="control-button-playpause"] button,.encore-bright-accent-set,.Button-sc-1dqy6lx-0 {
     background-color: transparent !important;
-    border: none !important;
+    background: transparent !important;
     box-shadow: none !important;
 }
