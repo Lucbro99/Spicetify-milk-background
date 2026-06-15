@@ -17,9 +17,7 @@
     --spice-main-elevated: rgba(0, 0, 0, 0.4);
 }
 
-/* -----------------------------------------------
-   BACKGROUND
-   ----------------------------------------------- */
+/*BACKGROUND*/
 
 /* Make the main container transparent so the GIF shows through */
 .Root__top-container {
@@ -59,9 +57,7 @@
     will-change: opacity;
 }
 
-/* -----------------------------------------------
-   TRANSPARENCY — remove Spotify's default backgrounds
-   ----------------------------------------------- */
+/* TRANSPARENCY  */
 
 .Root__globalNav,
 .Root__nav-bar,
@@ -96,9 +92,7 @@
     background-color: var(--glass-bg) !important;
 }
 
-/* -----------------------------------------------
-   TOP BAR
-   ----------------------------------------------- */
+/*TOP BAR */
 
 .main-topBar-background {
     background: linear-gradient(90deg,
@@ -108,9 +102,7 @@
     border-bottom: 1px solid rgba(193, 18, 31, 0.25);
 }
 
-/* -----------------------------------------------
-   BUTTONS & ICONS
-   ----------------------------------------------- */
+/*BUTTONS & ICONS*/
 
 /* Active buttons (shuffle, repeat) glow in cyan */
 button[aria-checked="true"] svg,
