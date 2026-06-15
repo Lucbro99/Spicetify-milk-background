@@ -207,3 +207,6 @@ spicetify restore
 - Theme created by [Lucbro](https://github.com/Lucbro99)
 - Inspired by the dynamic background system from [CyberNight](https://github.com/me974974/CyberNight) by me974974
 - Game: [Milk inside a bag of milk inside a bag of milk](https://store.steampowered.com/app/1392820/Milk_inside_a_bag_of_milk_inside_a_bag_of_milk/) by Nikita Kryukov
+
+## Disclaimer
+This theme modifies Spotifyś files. Use it at your own risk.
